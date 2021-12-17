@@ -85,23 +85,39 @@ def fun1(a, b, c=33):
 fun1(11, 22)
 fun1(11, 22, c=44)
 # fun1(a=1, b=2,A=44) 报错了,命名参数与形参不一致
-"""
+
 # 不定长参数
 
-def num1(a, b, *args):
+def num1(a, b,c=3, *args ):
     sumnum = 0
     for i in args:
         sumnum += i
     result = sumnum+a+b
     print(result)
-num1(1,2,3,4,5,6,7)
+num1(1,2,3,4,5,6,c=7)
 
+*args:传进的所有参数都会被args变量收集，
+它会根据传进参数的位置合并为一个元组(tuple)，
+args是元组类型，这就是包裹位置传递。
+** kwargs:kargs是一个字典(dict)，收集所有关键字参数
 
+def test(a, b, *args, **kwargs):
+    print(a)
+    print(b)
+    print(args)
+    print(kwargs)
+A = (11,33,55)
+B = {"name":"lisi","age":18}
+test(1,2,3,4,5,6,t=7,y=9)
+test(77, 99, A, B)
+test(77, 99, *A, **B)   #拆包把字典或者元组拆开包装
 
-
-
-
-
+"""
+# 引用
+a = 100
+b = a
+print(id(a))
+print(id(b))
 
 
 
