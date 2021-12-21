@@ -118,9 +118,20 @@ a = 100
 b = a
 print(id(a))
 print(id(b))
+
 """
+"""
+匿名函数
+        格式   lambda [arg1 [,arg2,.....argn]]:expression
+            lambda x,y:x+y
 
 
+def test(a, b,fun):
+    result = fun(a, b)
+    return result
 
-
-
+lambda_fun = input("请输入一个匿名函数:")
+lambda_fun = eval(lambda_fun)
+sum = test(11, 33, lambda_fun)
+print(sum)
+"""
