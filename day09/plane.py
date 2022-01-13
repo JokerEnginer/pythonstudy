@@ -1,11 +1,10 @@
 import pygame
 from pygame.locals import *
 import time
-
 class HeroPlane(object):
     def __init__(self, screen):
         self.x = 200
-        self.y =y = 520
+        self.y = 520
         self.screen = screen
         self.image = pygame.image.load(r"F:\pythonstudy\feiji\hero1.png")
         self.bullet_list = []    #  存储子弹对象
@@ -14,6 +13,7 @@ class HeroPlane(object):
         self.screen.blit(self.image, (self.x, self.y))
         for bullet in self.bullet_list:
             bullet.show()
+            bullet.move()
 
     def move_left(self):
         self.x -= 2
@@ -29,10 +29,13 @@ class Bullet(object):
         self.x = x+40
         self.y =y-20
         self.screen = screen
-        self.image = pygame.image.load(r"F:\pythonstudy\feiji\bullet.png").convert()
+        self.image = pygame.image.load(r"F:\pythonstudy\feiji\bullet.png")
 
     def show(self):
         self.screen.blit(self.image, (self.x, self.y))
+
+    def move(self):
+        self.y -= 5
 
 
 def key_judge(hero_temp):
