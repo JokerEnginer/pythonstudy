@@ -17,7 +17,11 @@ def fib():
 c = fib()
 print(type(c))
 print(next(c))
-print(next(c))
-print(next(c))
-print(next(c))
 
+# 使用for循环遍历迭代器
+for i in c:
+    print(i)
+
+# c.__next__()与next(c)是等价的
+# print(c.__next__())  如果生成器没有值,就会报错StopIteration
+# next(c)
