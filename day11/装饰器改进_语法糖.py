@@ -10,6 +10,7 @@ def w1(fun):
         fun()
     return in_fun
 # 部门基础功能
+# python解释器在执行到这行代码的时候就已经开始装饰了,而不需要等到调用函数才开始装饰
 @w1
 def fun1():
     print("---fun1---")
@@ -28,4 +29,5 @@ def fun3():
 # f2()
 # fun3 = w1(fun3)
 # fun3()
+# 调用函数之前已经装饰成功
 fun1()
