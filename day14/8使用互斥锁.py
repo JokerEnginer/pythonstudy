@@ -29,11 +29,8 @@ def worker2():
     print("in worker2 ",g_num)
 # 创建一把互斥锁
 lock = Lock()
-
-
 t1 = Thread(target=worker1)
 t1.start()
-
 t2 = Thread(target=worker2)
 t2.start()
 
